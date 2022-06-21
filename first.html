@@ -1,4 +1,67 @@
 <!DOCTYPE html>
 <html>
-    hai mmm
+    <head>
+          <style>
+                 table, th, td {
+                                border: 1px solid black;
+                                
+                              }
+                    
+                    th, td {
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 10px;
+                                padding-right: 30px;
+                            }
+                
+          </style>
+    </head>
+    <body>
+          <table>
+            <thead>
+                <tr style="background-color:green">
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+
+            </tbody>
+          </table>
+
+          <script>      
+                   const persons=[{name:"suresh",age:28,salary:40000,city:"andhrapradesh"},
+                                  {name:"lokesh",age:21,salary:30000,city:"bangalore"},
+                                  {name:"dinesh",age:25,salary:45000,city:"kochi"},
+                                  {name:"ganesh",age:29,salary:20000,city:"gova"},
+                                  {name:"rajesh",age:22,salary:60000,city:"mumbai"},
+                                  {name:"ramesh",age:24,salary:70000,city:"chennai"},
+                                  {name:"rakesh",age:30,salary:55000,city:"kolkata"}];
+    
+        function personsTable(){
+
+                  var  html=" ";
+                        for(let i=0; i<persons.length; i++){
+                    html += `<tr style="background-color:#00ffff">
+                                <td>${persons[i].name}</td>
+                                <td>${persons[i].age}</td>
+                                <td>${persons[i].salary}</td>
+                                <td>${persons[i].city}</td>
+                                <td style="background-color:gray"><a href="#" class="onEdit">edit</a> | <a href="#" class="onSave">save</a></td>
+                            </tr>`;
+                        }
+                        document.getElementById("myTable").innerHTML=html;
+                    }
+    
+                    personsTable();
+                   
+                
+
+                
+          </script>
+    </body>
+
 </html>
