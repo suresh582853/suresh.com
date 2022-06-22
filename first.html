@@ -46,21 +46,21 @@
                   var  html=" ";
                         for(let i=0; i<persons.length; i++){
                     html += `<tr style="background-color:#00ffff">
-                                <td>${persons[i].name}</td>
+                                <td class="demo">${persons[i].name}</td>
                                 <td>${persons[i].age}</td>
                                 <td>${persons[i].salary}</td>
                                 <td>${persons[i].city}</td>
-                                <td style="background-color:gray"><a href="#" class="onEdit">edit</a> | <a href="#" class="onSave">save</a></td>
+                                <td style="background-color:gray">
+                                <button id="on_edit" onclick="onEdit()">Edit</button> <button id="on_save" onclick="onSave()">Save</button></td>
                             </tr>`;
                         }
                         document.getElementById("myTable").innerHTML=html;
                     }
     
                     personsTable();
-                   
-                
+                    
+            
 
-                
           </script>
     </body>
 
