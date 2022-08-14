@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <style>
+              .header{
+                     background-color: red;
+              }
+              .buttons {
+              position: fixed;
+              top: 50%;
+               left: 50%;
+             transform: translate(-50%, -50%);
+          }
+       </style>
+</head>
+<body >
+         
+       
+       <script src="test.js?v=3"></script>
+
+
+
+<div style="margin-top:100px;left:300px">
+       <h1>This is a CSS</h1>              
+</div>
+
+<div class="buttons">
+<input type="text" id="name"/>
+ <input type="button" id="textButton" value="textButton">   
+</div>     
+
+
+
+       <script>
+       
+         display();
+
+      var textButton=document.getElementById("textButton");
+    
+      textButton.addEventListener('click',displayText);
+
+       function displayText(){
+      var inputtext=document.getElementById("name").value;
+      if(inputtext== 'h'){
+        window.location.href='http://localhost/suresh/HTML.html';
+      }if(inputtext== 'j'){
+        window.location.href='http://localhost/suresh/JAVASCRIPT.html';
+      }
+    }
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  
+    <head> 
+          <style>
+                  .modal{
+                          position: fixed;
+                          width: 100%;
+                          height: 100%;
+                          display: none;
+                          top:0px;
+                          background-color:cornflowerblue
+                        
+                           }
+                 .modal-content{
+                          float: right;
+                          position: absolute;
+                          top: 30%;
+                          right: 50%;
+                          left:10%;
+                          background-color: lightblue;
+                          padding: 16px 20px;
+                          width: 450px;
+                          border-radius: 10px;
+                        }
+                  .close-button{
+                        float: right;
+                        cursor: pointer;
+                        width:  12px;
+                        border-radius: 2px;
+                        background-color: red;
+                     }  
+                  .close-button:hover {
+                        background-color: darkgray;
+                     }
+                  .btn, .click-button{
+                       cursor: pointer;
+                    }
+                    .modal1{
+                          position: fixed;
+                          width: 100%;
+                          height: 100%;
+                          display: none;
+                          bottom: -250px;
+                           }
+                 .modal-content1{
+                          position: absolute;
+                          background-color:darkolivegreen;
+                          padding: 16px 20px;
+                          width: 450px;
+                          border-radius: 10px;
+                          left:150px;
+                          bottom: 40%;
+                        }
+                  .close-button1{
+                        float: right;
+                        cursor: pointer;
+                        width:  12px;
+                        border-radius: 2px;
+                        background-color:chocolate;
+                     }
+           </style>
+    </head>
+    <body>  
+            <button class="btn">Click here</button>
+
+            <div class="modal">
+               <div class="modal-content">
+                  <span class="close-button">X</span>
+                  <h1>Welcome to Software World!</h1>
+                   
+                  <button class="click-button">Click</button>
+                    
+                   <div class="modal1">
+                     <div class="modal-content1">
+                        <span class="close-button1">X</span>
+                        <h1>Hello Sir</h1>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <script>
+                 let modal=document.querySelector('.modal');
+                 let close_btn=document.querySelector('.close-button');
+                 let btn=document.querySelector('.btn');
+
+                 btn.addEventListener('click',display);
+
+                 function display(){
+                   modal.style.display="block";
+                 }
+
+                 close_btn.addEventListener('click',hide);
+
+                 function hide(){
+                  modal.style.display="none";
+                 }
+
+                 let click_btn=document.querySelector('.click-button');
+                 let modal1=document.querySelector('.modal1');
+                 let close_btn1=document.querySelector('.close-button1');
+               
+                 click_btn.addEventListener('click',display1);
+
+                 function display1(){
+                   modal1.style.display="block";
+                 }
+
+                 close_btn1.addEventListener('click',hide1);
+
+                 function hide1(){
+                  modal1.style.display="none";
+                 }
+            
+                
+            </script>
+    </body>
+</html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
           <style>
                  table, th, td {
                                 border: 1px solid black;
@@ -17,7 +18,7 @@
           </style>
     </head>
     <body>
-          <table>
+          <table id="eTable">
             <thead>
                 <tr style="background-color:green">
                     <th>Name</th>
@@ -45,23 +46,47 @@
 
                   var  html=" ";
                         for(let i=0; i<persons.length; i++){
-                    html += `<tr style="background-color:#00ffff">
-                                <td class="demo">${persons[i].name}</td>
-                                <td>${persons[i].age}</td>
-                                <td>${persons[i].salary}</td>
-                                <td>${persons[i].city}</td>
+                    html += `<tr style="background-color:#00ffff" id="row_${i}"">
+                                <td id="ename">${persons[i].name}</td>
+                                <td id="eage">${persons[i].age}</td>
+                                <td id="esalary">${persons[i].salary}</td>
+                                <td id="ecity">${persons[i].city}</td>
                                 <td style="background-color:gray">
-                                <button id="on_edit" onclick="onEdit()">Edit</button> <button id="on_save" onclick="onSave()">Save</button></td>
-                            </tr>`;
+                                <button id="on_edit" onclick="onEdit(${i})">Edit</button> 
+                                <div>
+                                <button id="on_save" onclick="Delete(this)">Delete</button>
+                                </div>
+                                </td>
+                                </tr>`;
                         }
                         document.getElementById("myTable").innerHTML=html;
                     }
     
                     personsTable();
-                    
-            
 
+
+                    
+                function onEdit(rowNum){
+                
+                var Row=document.getElementById("row_"+rowNum);
+                var Cells=Row.getElementsByTagName("td");
+              
+               Cells[0].innerHTML=`<input type="text" id="eName" value="${Cells[0].innerHTML}"/>`;
+               Cells[1].innerHTML=`<input type="text" id="eAge" value="${Cells[1].innerHTML}"/>`;
+               Cells[2].innerHTML=`<input type="text" id="eSalary" value="${Cells[2].innerHTML}"/>`;
+               Cells[3].innerHTML=`<input type="text" id="eCity" value="${Cells[3].innerHTML}"/>`;
+          }    
+
+          function Delete(element){
+             var text="Are you surely want to delete";
+             var confirmValue=confirm(text);
+             if(confirmValue==true){
+            
+             }
+    
+          }
           </script>
+
     </body>
 
 </html>

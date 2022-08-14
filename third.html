@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <style>
+                  .col1, .col2 ,
+                  .col3, .col4{
+                            float: left;
+                            width: 49%;
+                            padding: 5px; 
+                        }
+                              
+           </style>
+      
+    </head>
+    <body>   
+              
+              <div class="col1">
+                      <label for="fname">FirstName :</label>
+                      <input type="text" data-name="foo"/>
+             </div>
+              <div class="col2">
+                     <label for="lname">LastName :</label>
+                     <input type="text"  data-name="foo"/>
+             </div>
+         
+            
+             <div class="col3">
+                     <label for="age">Age :</label>
+                     <input type="text"  data-name="foo"/>
+            </div>
+            <div class="col4">
+                     <label for="city">City :</label>
+                     <input type="text"  data-name="foo"/>
+            </div>
+      
+             <div>
+              <button  onclick="showDetails()">Submit</button>
+            </div>
+      
+  
+                   <div id="demo"></div>
+            <script>
+
+                   function showDetails() {
+
+                    let html_error=`<div id="_error" style="display:none">Mandatory field</div>`;
+                  
+                    var y="";
+
+                    let x=document.querySelectorAll('[data-name="foo"]');
+
+                    for(var i=0;i<x.length;i++){
+
+                     let z=x[i].value;
+
+                       y += z +" ";
+                     
+                       if(z==""){
+                        
+                        x[i].style.backgroundColor="red";
+
+                      }else{
+                     
+                           x[i].style.backgroundColor="white";
+                    }
+
+                    }
+                      document.getElementById("demo").innerHTML=y;
+                       }
+            </script>
+    </body>
+</html>

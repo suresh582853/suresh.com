@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  
+    <head> 
+          <style>
+             .hidden{
+                        display:none;
+                    }
+                    .btn{
+                        font-size: 1.5rem;
+                        font-weight: 200;
+                        padding: 1rem 2 rem;
+                        margin: 3rem 2rem;
+                        border: none;
+                        background-color: lightblue;
+                        color:#444;
+                        border-radius: 5rem;
+                        cursor: pointer;
+                    }
+                    .close-btn{
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        font-size: 2rem ;
+                        color: #333;
+                        background: none;
+                        cursor: pointer;
+                    }
+                    .modal{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform:translate(-50%,-50%);
+                        background-color: blue;
+                        width:50%;
+                        padding: 4rem;
+                        border-radius: 5px;
+                        overflow-x: hidden;
+                        overflow-y: scroll;
+                        box-shadow: 2rem 3rem 5rem rgba(0,0,0,0.3);
+                        z-index: 10;
+                    }
+                    .overlay{
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        width: 100%;
+                        height:100%;
+                        background-color: rgba(0,0,0,0.6);
+                        backdrop-filter: blur(3px); 
+                        z-index: 5;
+                    }
+                    h1{
+                        text-align: center;
+                    }
+                 
+           </style>
+    </head>
+    <body>  
+
+      <a href="#" class="btn" >Click here</a>
+   
+      <div class="modalClass hidden">
+
+        <div class="modal" id="mod">
+            <button class="close-btn">&times;</button>
+             <h1>Have a Nice day!</h1>
+        </div>
+
+        <div class="overlay "></div>
+
+      </div>
+    
+
+      <script>
+              let btn=document.querySelector('.btn');
+              let modal=document.querySelector('.modalClass');
+              let close_btn=document.querySelector('.close-btn');
+              let overlay=document.querySelector('.overlay');
+           
+              
+
+              btn.addEventListener('click',function(){
+                 
+                let  mod=document.querySelector('#mod');
+
+                   modal.classList.remove('hidden');
+                   
+              });
+
+              close_btn.addEventListener('click',function(){
+                   modal.classList.add('hidden'); 
+              });
+                  
+
+            </script>
+    </body>
+</html>

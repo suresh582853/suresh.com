@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+             <style>
+                         table, th, td {
+                                border: 1px solid black;
+                                
+                              }
+                    
+                    th, td {
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                padding-left: 10px;
+                                padding-right: 30px;
+                            }
+
+             </style>
+    </head>
+    <body style="margin: 120px 350px;">
+           
+         <h2>List</h2>
+         <table border="1">
+                 <thead>
+                         <tr>
+                              <th>Name</th>
+                              <th>Age</th>
+                              <th>Email</th>
+                              <th>Action</th>
+                         </tr>
+                 </thead>
+                 <tbody id="root">
+                        
+                 </tbody>
+         </table>
+
+         <div style="position:absolute;top: 150px;right: 500px;">
+         <button id="add">Add</button>
+        </div>
+
+        <script src="test.js"></script>
+        <script src="employee.js"></script>
+        <script>
+            display();
+            employee();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+             <style>
+                     .tableclass{
+                         text-align: center;       
+                     }
+                    table.center{
+                       margin-left:auto;
+                       margin-right:auto;
+                       width:60%;
+                       height:auto;
+                     }
+                   .simple{
+                     text-align: left; 
+                   }
+                   #coloradd{
+                     background-color: rgb(249, 249, 108);
+                   }
+             </style>
+    </head>
+    <body>
+         <form >
+           <table class="center" border="1px solid black">
+
+                   <thead>
+                           <tr class="tableclass">
+                                 <th colspan="4">XYZ University Student Registration</th>
+                          </tr>  
+                   </thead>
+
+                   <tbody class="simple">
+                       
+                          <tr>
+                             <th rowspan="4">Personal Details</th>
+                                  <td>First Name</td>
+                                  <td><input type="text" size="30" id="coloradd"/></td>
+                          </tr>
+                          <tr>
+                                  <td>Last Name</td>
+                                  <td><input type="text" size="30" id="coloradd"/></td>
+                          </tr>    
+                          <tr>
+                                 <td>Date of Birth</td>
+                                 <td><input type="date" size="30"/></td>
+                         </tr> 
+                         <tr>
+                            <td>Gender</td>
+                            <td>
+                                <input type="radio" name="gender" value="male" size="30"> Male
+                                <input type="radio" name="gender" value="female" size="30"> Female
+                                <input type="radio" name="gender" value="other" size="30"> Other
+                            </td>
+                         </tr> 
+                          
+                         <tr>
+                               <th rowspan="4">Academic Details</th>
+                               <td>Degree</td>
+                               <td><select>
+                                           <option>Masters</option>
+                                           <option>B.Tech</option>
+                                           <option>M.SC</option>
+                                           <option>M.Tech</option>
+                                   </select>
+                                </td>    
+                         </tr>
+                         <tr>
+                                <td>Specialization</td>  
+                                <td><input type="text" size="30"></td>
+                         </tr>
+                         <tr>
+                               <td>Model of instruction</td>
+                               <td>
+                                   <input type="checkbox" name="classroom">Classroom
+                                   <input type="checkbox"name="Online">Online
+                               </td>
+                         </tr>
+                         <tr>
+                               <td>Current GPA</td>
+                               <td><input type="text" size="30"></td>
+                         </tr>
+                         <tr>
+                              <th rowspan="2">Contact Details</th>
+                              <td>Phone Number</td>
+                              <td><input type="text" size="30" id="coloradd"></td>
+                         </tr>
+                         <tr>
+                              <td>Address</td>
+                              <td><textarea rows="4" cols="84" id="coloradd"></textarea></td>
+                         </tr>
+                   </tbody>
+
+                   <tfoot>
+                           <tr class="tableclass">
+                                 <th colspan="4">I assure all the details entered are correct: <input type="checkbox"> yes</th>
+                           </tr>
+                           <tr class="tableclass">
+                                 <td colspan="4"><input type="submit"/></td>
+                           </tr>  
+                   </tfoot>
+           </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+     <head></head>
+     <body>
+         
+          <div style="margin: 120px 350px;">    
+               <h1>Registration Form</h1>
+           <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name"/>
+          </div>
+          <div>
+            <label for="age">Age:</label>
+            <input type="text" id="age"/>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email"/>
+            <div id="emailValid" style="display:none">your email id already existed</div>
+          </div>
+          <div>
+              <input type="button" id="btn1" value="Submit"/>
+          </div>    
+    </div> 
+
+         <script src="test.js"></script>
+         <script src="employee.js"></script>
+         <script>
+
+        
+           display();             
+                
+           const url=new URLSearchParams(window.location.search);
+
+           const mod=url.get('email');
+   
+           let users=JSON.parse(localStorage.getItem("users"));
+
+           for(let k=0;k<users.length;k++){
+
+              if(users[k].email== mod){
+
+                 document.getElementById("name").value=`${users[k].name}`;
+                 document.getElementById("age").value=`${users[k].age}`;
+                 document.getElementById("email").value=`${users[k].email}`;
+      
+              }
+           }
+
+           
+          
+      </script>
+                  
+     </body>
+</html>

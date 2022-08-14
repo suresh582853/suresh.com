@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+           
+
+    <div>    
+               <h1>Registration Form</h1>
+           <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name"/>
+          </div>
+          <div>
+            <label for="age">Age:</label>
+            <input type="text" id="age"/>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email"/>
+            <div id="emailValid" style="display:none">your email id already existed</div>
+          </div>
+          <div>
+              <input type="button" id="btn" value="Submit"/>
+          </div>    
+    </div> 
+
+         <h2>List</h2>
+         <table border="1">
+                 <thead>
+                         <tr>
+                              <td>Name</td>
+                              <td>Age</td>
+                              <td>EMAIL</td>
+                         </tr>
+                 </thead>
+                 <tbody id="root">
+                        
+                 </tbody>
+         </table>
+
+          <script>
+                       var personalDetails=[];            
+                   
+                       var btn=document.getElementById("btn");
+                    
+                      btn.addEventListener('click',function(){
+
+                       let ename=document.getElementById("name").value;
+                       let eage=document.getElementById("age").value;
+                       let eemail=document.getElementById("email").value;
+                      
+                          personalDetails=JSON.parse(localStorage.getItem("users")||'[]');
+                          
+                          let eObj=  {name:ename,age:eage,email:eemail};
+
+                          personalDetails.push(eObj);
+
+                          localStorage.setItem("users",JSON.stringify(personalDetails));
+                    
+                    });
+
+                    function employee(){
+
+                    let users=JSON.parse(localStorage.getItem("users"));
+
+                        let html="";
+
+                        for(let i=0;i<users.length;i++){
+                          html +=`<tr>
+                                      <td>${users[i].name}</td>
+                                      <td>${users[i].age}</</td>
+                                      <td>${users[i].email}</</td>
+                                   </tr>`;
+                        }
+                        document.getElementById("root").innerHTML=html;
+                    
+                    }
+
+                    employee();
+
+           </script>
+    </body>
+</html>

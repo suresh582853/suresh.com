@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body> 
+            <div>
+             Name: <input type="text" id="name" ></input>
+            
+            </div>
+            <div>
+             Age: <input type="text" id="age"></input>
+            
+            </div>
+            <div>
+             City: <input type="text" id="city"></input>
+             
+            </div>
+            <div>
+                <button id="button"onclick="submit()">Submit</button>
+            </div>
+                  <div id="total"></div>
+            <script>
+                   function submit(){
+
+                     let html_error=`<div style="display:none">Mandatory field</div>`;
+  
+
+                     var name=document.getElementById("name").value;
+                    var age=document.getElementById("age").value;
+                    var city=document.getElementById("city").value;
+                    
+               if(name==""){
+                    document.getElementById("name").style.display="block";
+                }else{
+                    document.getElementById("name").style.display="none";
+                }
+                if(age==""){
+                    document.getElementById("age").style.display="block";
+                }else{
+                    document.getElementById("age").style.display="none";
+                }
+                if(city==""){
+                    document.getElementById("city").style.display="block";
+                }else{
+                    document.getElementById("city").style.display="none";
+                }
+
+                       document.getElementById("total").innerHTML=name+""+age+""+city;
+                   }
+            
+            </script>
+
+    </body>
+</html>
